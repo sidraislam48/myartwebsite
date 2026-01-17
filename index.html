@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art Explorer | Home</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="navbar">
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+      <i class="bx bx-menu"></i>
+    </button>
+    
+    <div class="nav-left logo">
+      <img src="images/logo.png" alt="AE Logo" class="logo-img">
+      <div class="brand-text">
+        <span class="brand-kicker">Art Explorer</span>
+        <small>Curated originals & limited editions</small>
+      </div>
+    </div>
+
+  <!-- ===== NAV LINKS ===== -->
+  <nav class="nav-links" id="navLinks">
+    <div class="nav-links-items">
+      <a href="index.html" class="active">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="art.html">Artisan Art</a>
+      <a href="product.html">Products</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+    <div class="search-bar-container">
+      <div class="search-container">
+        <i class="bx bx-search search-icon"></i>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search artworks, products..." />
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </div>
+  </nav>
+
+    <div class="nav-right">
+      <a href="signup.html" class="pill-btn">Join</a>
+      <a href="product.html" class="cart-link" id="cartLink">
+        <i class="bx bx-shopping-bag"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" style="background-image: url('https://plus.unsplash.com/premium_photo-1679051422121-236a445a51d8?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
+    <div class="hero-accent"></div>
+    <div class="hero-content">
+      <h1>Discover the Art of Expression</h1>
+      <p>Where timeless craftsmanship meets modern imagination.</p>
+      <div class="hero-actions">
+        <a href="product.html" class="btn">Explore Collections</a>
+        <a href="#newsletter" class="ghost-btn">Get weekly drops</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUE PILLARS ===== -->
+  <section class="pillars">
+    <div class="pillar-card">
+      <i class="bx bxs-badge-check"></i>
+      <div>
+        <h3>Authenticated</h3>
+        <p>Certificates with every original piece.</p>
+      </div>
+    </div>
+    <div class="pillar-card">
+      <i class="bx bxs-truck"></i>
+      <div>
+        <h3>Worldwide care</h3>
+        <p>Insured, climate-friendly shipping.</p>
+      </div>
+    </div>
+    <div class="pillar-card">
+      <i class="bx bxs-chat"></i>
+      <div>
+        <h3>Curator chat</h3>
+        <p>Personal picks in under 24 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED ART (Harvard API) ===== -->
+  <section class="featured">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Live from Harvard Art Museums API</p>
+        <h2>Featured Artworks</h2>
+      </div>
+      <button class="pill-btn secondary" id="refresh-art">Refresh picks</button>
+    </div>
+    <div class="art-grid">
+      <div class="placeholder-card">Loading gallery...</div>
+    </div>
+  </section>
+
+  <!-- ===== GLOBAL HIGHLIGHTS (Met Museum API) ===== -->
+  <section class="museum">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Met Museum API</p>
+        <h2>Global Highlights</h2>
+        <p class="muted">Museum-grade pieces to inspire your next collection.</p>
+      </div>
+      <button class="pill-btn secondary" id="refresh-met">See new</button>
+    </div>
+    <div class="museum-grid">
+      <div class="placeholder-card">Fetching highlights...</div>
+    </div>
+  </section>
+
+  <!-- ===== QUOTE ===== -->
+  <section class="quote-banner" id="quote">
+    <div class="quote-mark">“</div>
+    <div>
+      <p class="quote-text">Art is the journey of a free soul.</p>
+      <p class="quote-author">— Loading curator note...</p>
+    </div>
+  </section>
+
+  <!-- ===== COLLECTIONS ===== -->
+  <section class="collections">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Curated Collections</p>
+        <h2>Explore Our Art Categories</h2>
+        <p class="muted">Discover unique pieces across diverse artistic styles and mediums</p>
+      </div>
+    </div>
+    <div class="collection-grid">
+      <div class="collection-item">
+        <img src="https://plus.unsplash.com/premium_photo-1678370891495-84c725e6f6ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2FsbGlncmFwaHl8ZW58MHx8MHx8fDA%3D" alt="Artisan Art" />
+        <div class="overlay">
+          <div class="collection-content">
+            <i class="bx bx-palette"></i>
+            <h3>Artisan Art</h3>
+            <p>Handcrafted masterpieces from skilled artisans worldwide</p>
+            <a href="art.html" class="collection-link">Explore <i class="bx bx-right-arrow-alt"></i></a>
+          </div>
+        </div>
+        <span class="collection-badge">Traditional</span>
+      </div>
+      <div class="collection-item">
+        <img src="https://images.unsplash.com/photo-1529432337323-223e988a90fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFydCUyMHByaW50c3xlbnwwfHwwfHx8MA%3D%3D" alt="Printed Editions" />
+        <div class="overlay">
+          <div class="collection-content">
+            <i class="bx bx-printer"></i>
+            <h3>Printed Editions</h3>
+            <p>Limited edition prints of iconic artworks</p>
+            <a href="product.html" class="collection-link">Browse <i class="bx bx-right-arrow-alt"></i></a>
+          </div>
+        </div>
+        <span class="collection-badge">Limited</span>
+      </div>
+      <div class="collection-item">
+        <img src="https://plus.unsplash.com/premium_photo-1681412204756-3ea8eda723f2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D" alt="Sculptures" />
+        <div class="overlay">
+          <div class="collection-content">
+            <i class="bx bx-cube"></i>
+            <h3>Sculptures</h3>
+            <p>Three-dimensional art forms in various materials</p>
+            <a href="product.html" class="collection-link">View <i class="bx bx-right-arrow-alt"></i></a>
+          </div>
+        </div>
+        <span class="collection-badge">3D Art</span>
+      </div>
+      <div class="collection-item">
+        <img src="https://images.unsplash.com/photo-1641391503184-a2131018701b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Digital Art" />
+        <div class="overlay">
+          <div class="collection-content">
+            <i class="bx bx-desktop"></i>
+            <h3>Digital Art</h3>
+            <p>Contemporary digital creations and NFT collections</p>
+            <a href="product.html" class="collection-link">Discover <i class="bx bx-right-arrow-alt"></i></a>
+          </div>
+        </div>
+        <span class="collection-badge">Modern</span>
+      </div>
+      <div class="collection-item">
+        <img src="https://plus.unsplash.com/premium_photo-1698362819283-8a321d8cf2ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHklMjBwcmludCUyMG9uJTIwcGFwZXJ8ZW58MHx8MHx8fDA%3D" alt="Photography" />
+        <div class="overlay">
+          <div class="collection-content">
+            <i class="bx bx-camera"></i>
+            <h3>Photography</h3>
+            <p>Fine art photography from renowned photographers</p>
+            <a href="product.html" class="collection-link">See More <i class="bx bx-right-arrow-alt"></i></a>
+          </div>
+        </div>
+        <span class="collection-badge">Fine Art</span>
+      </div>
+      <div class="collection-item">
+        <img src="https://plus.unsplash.com/premium_photo-1673288399839-a79e90605930?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWJzdHJhY3QlMjBhcnR8ZW58MHx8MHx8fDA%3D" alt="Abstract Art" />
+        <div class="overlay">
+          <div class="collection-content">
+            <i class="bx bx-shape-polygon"></i>
+            <h3>Abstract Art</h3>
+            <p>Bold expressions of color, form, and emotion</p>
+            <a href="product.html" class="collection-link">Explore <i class="bx bx-right-arrow-alt"></i></a>
+          </div>
+        </div>
+        <span class="collection-badge">Contemporary</span>
+      </div>
+    </div>
+    <div class="collections-cta">
+      <p>Can't find what you're looking for?</p>
+      <a href="contactus.html" class="pill-btn">Request Custom Collection</a>
+    </div>
+  </section>
+
+  <!-- ===== CTA STRIP ===== -->
+  <section class="cta-panels">
+    <div class="cta-card">
+      <h3>Book a curator</h3>
+      <p>Share your space & vibe. We craft a shortlist for you.</p>
+      <a href="contactus.html" class="pill-btn">Start now</a>
+    </div>
+    <div class="cta-card">
+      <h3>Try virtual staging</h3>
+      <p>Drop a room photo—see art mocked up before you buy.</p>
+      <a href="contactus.html" class="ghost-btn">Upload room</a>
+    </div>
+    <div class="cta-card">
+      <h3>Join collector circle</h3>
+      <p>Members-only previews, early drops, and studio visits.</p>
+      <a href="signup.html" class="pill-btn">Become a member</a>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter" id="newsletter">
+    <h2>Join Our Art Community</h2>
+    <p>Subscribe to get updates on new artworks, exhibitions, and offers.</p>
+    <form class="newsletter-form">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="form-status" aria-live="polite"></p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+  <img src="images/logo.png" alt="Art Explorer Logo" />
+</div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="art.html">Art</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <ul>
+          <li>P.O. Box 36917, Dubai, UAE</li>
+          <li>+971 42 29 5001</li>
+          <li>artexplorer@gmail.com</li>
+        </ul>
+      </div>
+  
+<!-- Cart Modal -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Shopping Cart</h2>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <strong>Total: $<span id="cartTotal">0</span></strong>
+    </div>
+    <div class="cart-actions">
+      <button class="btn-secondary" id="closeCart">Continue Shopping</button>
+      <button class="btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+    <div class="footer-bottom">&copy; 2025 Art Explorer. All Rights Reserved.</div>
+  </footer>
+   
+  <script src="script.js"></script>
+  <script src="search-cart.js"></script>
+
+</body>
+</html>
