@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artisan Art - Art Explorer</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="art-products.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+    <i class="bx bx-menu"></i>
+  </button>
+  <div class="nav-left logo">
+    <img src="images/logo.png" alt="AE Logo" class="logo-img">
+    <div class="brand-text">
+      <span class="brand-kicker">Art Explorer</span>
+      <small>Curated originals & limited editions</small>
+    </div>
+  </div>
+
+  <!-- ===== NAV LINKS ===== -->
+  <nav class="nav-links" id="navLinks">
+    <div class="nav-links-items">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="art.html" class="active">Artisan Art</a>
+      <a href="product.html">Products</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+    <div class="search-bar-container">
+      <div class="search-container">
+        <i class="bx bx-search search-icon"></i>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search artworks, products..." />
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-right">
+    <a href="signup.html" class="pill-btn">Join</a>
+    <a href="product.html" class="cart-link" id="cartLink">
+      <i class="bx bx-shopping-bag"></i>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </a>
+  </div>
+</header>
+
+<!-- ART SECTION -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">Handcrafted Masterpieces</p>
+      <h2 class="page-title">Artisan Art Collection</h2>
+      <p class="section-description">Discover unique handcrafted artworks from skilled artisans around the world</p>
+    </div>
+    <div class="filter-controls">
+      <select id="artFilter" class="filter-select">
+        <option value="all">All Categories</option>
+        <option value="calligraphy">Calligraphy</option>
+        <option value="pottery">Pottery</option>
+        <option value="canvas">Canvas Art</option>
+        <option value="textile">Textile Art</option>
+        <option value="sculpture">Sculptures</option>
+        <option value="jewelry">Jewelry</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="grid-container" id="artGrid">
+    <div class="card" data-category="calligraphy">
+      <div class="card-image">
+        <img src="https://plus.unsplash.com/premium_photo-1675623429828-82f173983c2a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Traditional Calligraphy">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Traditional</span>
+        <h3>Traditional Calligraphy</h3>
+        <p class="card-description">Elegant Arabic calligraphy on premium paper</p>
+        <div class="card-footer">
+          <span class="artist">By Ahmed Al-Mansoori</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="pottery">
+      <div class="card-image">
+        <img src="https://plus.unsplash.com/premium_photo-1673152979526-98b94a39b6aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGNlcmFtaWMlMjB2YXNlJTIwaGFuZG1hZGV8ZW58MHx8MHx8fDA%3D" alt="Handcrafted Pottery">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Handmade</span>
+        <h3>Handcrafted Pottery</h3>
+        <p class="card-description">Traditional ceramic vase with intricate patterns</p>
+        <div class="card-footer">
+          <span class="artist">By Fatima Hassan</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="canvas">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1579965342575-16428a7c8881?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FudmFzJTIwYXJ0fGVufDB8fDB8fHww" alt="Canvas Art">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Original</span>
+        <h3>Canvas Art</h3>
+        <p class="card-description">Vibrant abstract painting on stretched canvas</p>
+        <div class="card-footer">
+          <span class="artist">By Maria Santos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="textile">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1760681557952-e78ce074a197?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cultural Patterns">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Cultural</span>
+        <h3>Cultural Patterns</h3>
+        <p class="card-description">Handwoven textile with traditional motifs</p>
+        <div class="card-footer">
+          <span class="artist">By Priya Sharma</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="sculpture">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1562187415-6462382445da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YnJvbnplJTIwc2N1bHB0dXJ3fGVufDB8fDB8fHww" alt="Bronze Sculpture">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Sculpture</span>
+        <h3>Bronze Sculpture</h3>
+        <p class="card-description">Modern abstract bronze sculpture</p>
+        <div class="card-footer">
+          <span class="artist">By James Wilson</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="jewelry">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1714734071000-5546c90735cd?q=80&w=786&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Handmade Jewelry">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Jewelry</span>
+        <h3>Handmade Jewelry</h3>
+        <p class="card-description">Silver necklace with semi-precious stones</p>
+        <div class="card-footer">
+          <span class="artist">By Layla Al-Zahra</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="calligraphy">
+      <div class="card-image">
+        <img src="https://plus.unsplash.com/premium_photo-1678370891495-84c725e6f6ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2FsbGlncmFwaHl8ZW58MHx8MHx8fDA%3D" alt="Modern Calligraphy">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Modern</span>
+        <h3>Modern Calligraphy</h3>
+        <p class="card-description">Contemporary style calligraphy artwork</p>
+        <div class="card-footer">
+          <span class="artist">By Omar Khalil</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="pottery">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1577744607599-83272da6f153?q=80&w=718&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ceramic Art">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Ceramic</span>
+        <h3>Ceramic Art</h3>
+        <p class="card-description">Decorative ceramic plate with floral design</p>
+        <div class="card-footer">
+          <span class="artist">By Yuki Tanaka</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="canvas">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=800&q=80" alt="Oil Painting">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Painting</span>
+        <h3>Oil Painting</h3>
+        <p class="card-description">Landscape oil painting on canvas</p>
+        <div class="card-footer">
+          <span class="artist">By Elena Petrov</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="textile">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1763616828230-884d136c2c96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="Embroidered Art">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Embroidery</span>
+        <h3>Embroidered Art</h3>
+        <p class="card-description">Hand-embroidered silk wall hanging</p>
+        <div class="card-footer">
+          <span class="artist">By Amina Bint Ali</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="sculpture">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1624456494702-3453929857bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDUxfHx8ZW58MHx8fHx8" alt="Wood Carving">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Woodwork</span>
+        <h3>Wood Carving</h3>
+        <p class="card-description">Intricate wooden sculpture hand-carved</p>
+        <div class="card-footer">
+          <span class="artist">By Chen Wei</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-category="jewelry">
+      <div class="card-image">
+        <img src="https://plus.unsplash.com/premium_photo-1679826780376-a9e9ab1e2ea9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGdvbGQlMjByaW5nJTIwaGFuZGNyYWZ0ZWR8ZW58MHx8MHx8fDA%3D" alt="Artisan Ring">
+        <div class="card-overlay">
+          <button class="view-btn">View Details</button>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-badge">Jewelry</span>
+        <h3>Artisan Ring</h3>
+        <p class="card-description">Handcrafted gold ring with unique design</p>
+        <div class="card-footer">
+          <span class="artist">By Sofia Martinez</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS MODAL -->
+<div id="detailsModal" class="modal">
+  <div class="modal-content details-modal-content">
+    <button class="close-modal">&times;</button>
+    <div class="modal-body">
+      <div class="details-image">
+        <img id="detailsImage" src="" alt="">
+      </div>
+      <div class="details-info">
+        <span id="detailsBadge" class="card-badge"></span>
+        <h2 id="detailsTitle"></h2>
+        <p id="detailsDescription" class="details-description"></p>
+        
+        <div class="details-meta">
+          <div class="meta-item">
+            <h4>Artist</h4>
+            <p id="detailsArtist"></p>
+          </div>
+          <div class="meta-item">
+            <h4>Category</h4>
+            <p id="detailsCategory"></p>
+          </div>
+          <div class="meta-item">
+            <h4>Medium</h4>
+            <p id="detailsMedium"></p>
+          </div>
+          <div class="meta-item">
+            <h4>Year</h4>
+            <p id="detailsYear"></p>
+          </div>
+        </div>
+
+        <div class="details-full-description">
+          <h3>About This Artwork</h3>
+          <p id="detailsFullText"></p>
+        </div>
+
+        <button class="btn-primary" id="addToCollectionBtn">Add to Wishlist</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo"><img src="images/logo.png"></div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="art.html">Art</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="contactus.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Contact Us</h3>
+      <ul>
+        <li>P.O. Box 36917, Dubai</li>
+        <li>+971 42 29 5001</li>
+        <li>artexplorer@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Cart Modal -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Shopping Cart</h2>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <strong>Total: $<span id="cartTotal">0</span></strong>
+    </div>
+    <div class="cart-actions">
+      <button class="btn-secondary" id="closeCart">Continue Shopping</button>
+      <button class="btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
+
+  <div class="footer-bottom">&copy; 2025 Art Explorer</div>
+</footer>
+
+<script src="search-cart.js"></script>
+</body>
+</html>

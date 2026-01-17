@@ -1,0 +1,839 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #1e1c1f;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* .navbar styles are inherited from home.css */
+
+.nav-left i,
+.nav-right i {
+  color: #fff;
+  font-size: 22px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-left i:hover,
+.nav-right i:hover {
+  color: #d4b06a;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border: 2px solid rgba(212,176,106,0.95);
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(180deg,#0f0e0f,#0b0b0c);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+} 
+
+/* ===== NAV LINKS ===== (SAME AS HOME) */
+.nav-links {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 0;
+  background: transparent;
+  flex-wrap: nowrap;
+}
+
+.nav-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #d4b06a;
+}
+
+/* ===== ABOUT HERO ===== */
+.about-hero {
+  position: relative;
+  text-align: center;
+  padding: 150px 20px;
+  background: linear-gradient(135deg, rgba(212, 176, 106, 0.1) 0%, rgba(30, 28, 31, 0.95) 100%),
+              url('https://images.unsplash.com/photo-1690122582259-d3e7b2cde7ec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fGFydCUyMGdhbGxlcnl8ZW58MHx8MHx8fDA%3D') center/cover no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(212, 176, 106, 0.15) 0%, rgba(20, 19, 20, 0.85) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(212, 176, 106, 0.2);
+  border: 1px solid rgba(212, 176, 106, 0.4);
+  border-radius: 30px;
+  color: #d4b06a;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  line-height: 1.2;
+}
+
+.about-hero p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #e0e0e0;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ===== STATS SECTION ===== */
+.stats-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1e1c1f 0%, #141314 100%);
+  border-top: 1px solid rgba(212, 176, 106, 0.2);
+  border-bottom: 1px solid rgba(212, 176, 106, 0.2);
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(212, 176, 106, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(212, 176, 106, 0.15);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  background: rgba(212, 176, 106, 0.1);
+  border-color: rgba(212, 176, 106, 0.3);
+  box-shadow: 0 10px 30px rgba(212, 176, 106, 0.2);
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #d4b06a;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.stat-number.animated {
+  animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* ===== ABOUT CONTENT ===== */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 100px 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-block;
+  color: #d4b06a;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.about-text {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.about-text h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  color: #ccc;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.feature-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ddd;
+}
+
+.feature-item i {
+  color: #d4b06a;
+  font-size: 1.3rem;
+}
+
+.feature-item span {
+  font-size: 1rem;
+}
+
+.about-image {
+  position: relative;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.image-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(212, 176, 106, 0.95);
+  color: #1e1c1f;
+  padding: 12px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.image-badge i {
+  font-size: 1.2rem;
+}
+
+/* ===== MISSION SECTION ===== */
+.mission-section {
+  padding: 100px 80px;
+  background: #141314;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.mission-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.mission-text {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mission-text h2 {
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.mission-text p {
+  color: #ccc;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.value-card {
+  background: linear-gradient(135deg, rgba(212, 176, 106, 0.05) 0%, rgba(30, 28, 31, 0.8) 100%);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(212, 176, 106, 0.15);
+  transition: all 0.4s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 176, 106, 0.4);
+  box-shadow: 0 15px 40px rgba(212, 176, 106, 0.2);
+  background: linear-gradient(135deg, rgba(212, 176, 106, 0.1) 0%, rgba(30, 28, 31, 0.9) 100%);
+}
+
+.value-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: rgba(212, 176, 106, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(212, 176, 106, 0.3);
+}
+
+.value-icon i {
+  font-size: 2.5rem;
+  color: #d4b06a;
+}
+
+.value-card h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.value-card p {
+  color: #bbb;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== TEAM SECTION ===== */
+.team-section {
+  padding: 100px 80px;
+  background: linear-gradient(to bottom, #1e1c1f, #141314);
+  text-align: center;
+}
+
+.team-header {
+  margin-bottom: 60px;
+}
+
+.team-header h2 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.team-header p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  background: linear-gradient(135deg, rgba(212, 176, 106, 0.05) 0%, rgba(30, 28, 31, 0.9) 100%);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(212, 176, 106, 0.15);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 176, 106, 0.4);
+  box-shadow: 0 20px 50px rgba(212, 176, 106, 0.2);
+}
+
+.member-image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(212, 176, 106, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.member-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(212, 176, 106, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.member-image:hover .member-overlay {
+  opacity: 1;
+}
+
+.member-image:hover img {
+  transform: scale(1.1);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  width: 45px;
+  height: 45px;
+  background: #1e1c1f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4b06a;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #d4b06a;
+  color: #1e1c1f;
+  transform: scale(1.1);
+}
+
+.team-member h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.member-role {
+  color: #d4b06a;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.member-bio {
+  color: #bbb;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== FOOTER ===== (SAME AS HOME) */
+footer {
+  background: #111;
+  padding: 40px 20px 10px;
+  text-align: center;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border: 2px solid #d4b06a;
+  border-radius: 50%;
+  padding: 5px;
+  background: #111;
+}
+
+footer h3 {
+  color: #d4b06a;
+  margin-bottom: 10px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #d4b06a;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* ===== For Tablets (768px and below) ===== */
+@media (max-width: 768px) {
+
+  /* Header spacing */
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Nav links turn smaller */
+  .nav-links {
+    gap: 20px;
+    padding: 12px 0;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  /* Hero section */
+  .about-hero {
+    padding: 100px 20px;
+    background-attachment: scroll;
+  }
+
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+    text-align: center;
+  }
+
+  .about-image {
+    order: -1;
+  }
+
+  .mission-section {
+    padding: 60px 30px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-section {
+    padding: 60px 30px;
+  }
+
+  .team-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .member-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* ===== For Mobile Phones (480px and below) ===== */
+@media (max-width: 480px) {
+
+  /* Header icons */
+  .nav-left i,
+  .nav-right i {
+    font-size: 20px;
+  }
+
+  /* Smaller logo */
+  .logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Navbar links stack into 2 rows automatically */
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  /* Hero text */
+  .about-hero {
+    padding: 80px 20px;
+    background-attachment: scroll;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  /* About section */
+  .about-content {
+    padding: 40px 20px;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+
+  .mission-section {
+    padding: 40px 20px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-section {
+    padding: 40px 20px;
+  }
+
+  .team-container {
+    grid-template-columns: 1fr;
+  }
+
+  .member-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 65px;
+    height: 65px;
+  }
+
+  footer h3 {
+    font-size: 1.1rem;
+  }
+
+  footer li {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
+
+
+/* Hide hamburger on desktop */
+#menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Default nav-links on desktop */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #111;
+  padding: 15px 0;
+}
+
+/* ------------------------------
+   MOBILE MENU STYLES
+--------------------------------*/
+@media (max-width: 768px) {
+  
+  /* Show hamburger */
+  #menu-toggle {
+    display: block;
+  }
+
+  /* Make links hidden by default */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #111;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    z-index: 20;
+  }
+
+  /* When menu is open */
+  .nav-links.open {
+    max-height: 300px;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}
